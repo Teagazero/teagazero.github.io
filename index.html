@@ -5,84 +5,173 @@
   <title>Teagazero Beats</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Animação Fade-in */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #111;
-      color: #f2f2f2;
-      text-align: center;
+      background-color: #f5f1e6;
+      color: #111;
+      animation: fadeIn 1.5s ease-in;
+      scroll-behavior: smooth;
+      background-image: radial-gradient(#eae4d8 1px, transparent 1px);
+      background-size: 12px 12px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     header {
-      padding: 50px 20px;
-      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      text-align: center;
+      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 48px;
-      margin: 0;
+    header img {
+      max-width: 280px;
+      height: auto;
+      filter: drop-shadow(0 0 3px rgba(0,0,0,0.1));
     }
 
-    p {
+    .description {
       font-size: 20px;
-      color: #aaa;
+      margin-top: 10px;
+      color: #333;
     }
 
     .beats {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 20px;
+      gap: 30px;
     }
 
     .beat {
-      width: 300px;
-      margin: 20px;
-      background-color: #1e1e1e;
+      background-color: #e8dfd0;
+      border: 2px solid #d4b36f;
       border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+      width: 320px;
+      box-shadow: 0 0 12px rgba(212, 179, 111, 0.3);
+      transition: transform 0.3s ease;
     }
 
-    iframe {
+    .beat:hover {
+      transform: translateY(-5px);
+    }
+
+    .beat iframe {
       width: 100%;
-      border: none;
       border-radius: 10px;
-      height: 166px;
+    }
+
+    .beat p {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .btn {
+      margin-top: 10px;
+      display: inline-block;
+      background-color: #d4b36f;
+      color: #111;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #caa850;
+    }
+
+    .links {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .links a {
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #111;
+      background-color: #d4b36f;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .links a:hover {
+      background-color: #caa850;
+    }
+
+    .spotify-player {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .spotify-player iframe {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
     }
 
     footer {
+      text-align: center;
       padding: 30px 20px;
       font-size: 14px;
-      color: #666;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .beat {
+        width: 100%;
+      }
+
+      header img {
+        max-width: 200px;
+      }
+
+      .btn, .links a {
+        width: 80%;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Teagazero Beats</h1>
-    <p>Beats exclusivos pra artistas que querem se destacar.</p>
+    <img src="https://teagazero.github.io/tag.png" alt="Teagazero Tag">
+    <div class="description">Beats luxuosos com alma de rua. Seja único. Seja Teagazero.</div>
   </header>
 
   <section class="beats">
     <div class="beat">
       <iframe scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/teagazero/shark-club&color=%2300ffff&auto_play=false&show_artwork=true">
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/teagazero/shark-club&color=%23d4b36f&auto_play=false&show_artwork=true">
       </iframe>
       <p>Shark Club (prod. Teagazero)</p>
+      <a href="#" class="btn">Comprar</a>
     </div>
-
-    <!-- Copie esse bloco abaixo pra adicionar mais beats -->
-    <!--
-    <div class="beat">
-      <iframe scrolling="no" frameborder="no" allow="autoplay"
-        src="LINK_DO_BEAT_EMBED_AQUI">
-      </iframe>
-      <p>NOME DO BEAT</p>
-    </div>
-    -->
   </section>
+
+  <div class="spotify-player">
+    <h2>Ouça no Spotify</h2>
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/artist/5KxUBMSxu0TLC84PBs9pOV?utm_source=generator"
+      width="100%" height="152" frameBorder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="links">
+    <a href="https://instagram.com/teagazero" target="_blank">Instagram</a>
+    <a href="https://wa.me/5511915321714" target="_blank">WhatsApp</a>
+  </div>
 
   <footer>
     © 2025 Teagazero. Todos os direitos reservados.
